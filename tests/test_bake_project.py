@@ -88,12 +88,7 @@ def test_bake_with_defaults(cookies):
 def test_bake_and_run_tests(cookies):
     with bake_in_temp_dir(cookies) as result:
         assert result.project.isdir()
-<<<<<<< HEAD
-        assert run_inside_dir('python setup.py test', str(result.project)) == 0
-=======
-        run_inside_dir('python -m unittest discover', str(result.project)) == 0
-        print("test_bake_and_run_tests path", str(result.project))
->>>>>>> 1676453... Removed all references to `setup.py test` fixes #500
+        assert run_inside_dir('python -m unittest discover', str(result.project)) == 0
 
 
 def test_bake_withspecialchars_and_run_tests(cookies):
